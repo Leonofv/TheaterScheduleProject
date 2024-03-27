@@ -1,0 +1,68 @@
+import React from 'react'
+import {
+  GridColumn,
+  FormInput,
+  FormGroup,
+  FormCheckbox,
+  Grid,
+  Form,
+  Segment,
+  Button
+} from 'semantic-ui-react'
+
+function AccountSettingsForm(handleInputChange) {
+
+  return (
+    <>
+    <Grid stackable divided>
+      <GridColumn style={{ maxWidth: '1155px', margin: 'auto' }}>
+        <Form as={Segment}>
+          <FormGroup widths={2}>
+            <FormInput
+              label='Email'
+              name='activePage'
+              min={1}
+              type='string'
+            />
+            <FormInput
+              label='Номер телефона'
+              name='totalPages'
+              min={1}
+              type='string'
+            />
+          </FormGroup>
+          <FormGroup widths={2}>
+            <FormCheckbox
+              label='Присылать уведомления по Email'
+              name='showEllipsis'
+            />
+            <FormCheckbox
+              label='Присылать уведомления в «Telegram»'
+              name='showFirstAndLastNav'
+            />
+          </FormGroup>
+          <FormGroup widths={2}>
+            <FormInput
+              label='Пароль'
+              name='boundaryRange'
+              min={0}
+              type='string'
+            />
+            <FormInput
+              label='Повтор пароля'
+              name='siblingRange'
+              min={0}
+              type='string'
+            />
+          </FormGroup>
+          <div style={{ textAlign: 'center' }}>
+            <Button positive size='large'>Подтвердить</Button>
+          </div>
+        </Form>
+      </GridColumn>
+    </Grid>
+    </>
+  );
+}
+
+export default AccountSettingsForm;
