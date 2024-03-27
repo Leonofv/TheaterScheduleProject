@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/TheaterScheduleProject-main.iml" filepath="$PROJECT_DIR$/.idea/TheaterScheduleProject-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schedule-api/schedule-api.iml" filepath="$PROJECT_DIR$/schedule-api/schedule-api.iml" />
+    </modules>
+  </component>
+</project>
