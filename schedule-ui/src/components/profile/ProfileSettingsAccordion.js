@@ -1,7 +1,9 @@
-import React from 'react';
-import { Accordion, Form, Button, FormCheckbox } from 'semantic-ui-react';
+import React, { useState } from 'react';
+import { Accordion, Form, Button } from 'semantic-ui-react';
+import ProfileSettingsModal from './ProfileSettingsModal';
 
-function ProfileSettingsAccordion({ userMe, setModalOpen }) {
+function ProfileSettingsAccordion({ userMe, modalOpen, setModalOpen, handleUpdateUser, handleToggleEmailNotifications, handleChangePassword, oldPassword, setOldPassword, newPassword, setNewPassword }) {
+
   const panels = [
     {
       key: 'privacy',
@@ -14,7 +16,7 @@ function ProfileSettingsAccordion({ userMe, setModalOpen }) {
               <input placeholder='' />
             </Form.Field>
             <Form.Field>
-              <FormCheckbox label='Присылать уведомления по Email' />
+              <Form.Checkbox label='Присылать уведомления по Email' />
             </Form.Field>
             <Form.Field>
               <label>Номер телефона</label>
@@ -30,7 +32,19 @@ function ProfileSettingsAccordion({ userMe, setModalOpen }) {
     },
   ];  
 
-  return ( <Accordion as={Form.Field} panels={panels} styled fluid />
+  return (
+    <>
+      <Accordion as={Form.Field} panels={panels} styled fluid />
+      <ProfileSettingsModal
+        modalOpen={modalOpen}
+        setModalOpen={setModalOpen}
+        oldPassword={oldPassword}
+        setOldPassword={setOldPassword}
+        newPassword={newPassword}
+        setNewPassword={setNewPassword}
+        handleChangePassword={handleChangePassword}
+      />
+    </>
   );
 }
 

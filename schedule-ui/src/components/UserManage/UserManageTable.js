@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Grid, Form, Button, Input, Table, Modal, Header } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 
-
 function UserManageTable({ users, userUsernameSearch, handleInputChange, handleDeleteUser, handleToggleUserStatus, handleSearchUser }) {
   const [modalOpen, setModalOpen] = useState(false);
   const [userToDelete, setUserToDelete] = useState(null);

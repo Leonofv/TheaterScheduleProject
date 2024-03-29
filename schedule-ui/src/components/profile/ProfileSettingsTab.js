@@ -1,10 +1,10 @@
 import React from 'react'
 import { Tab, Form } from 'semantic-ui-react'
-import ProfileSettingsDeteilsForm from './ProfileSettingsDeteilsForm'
+import ProfileSettingsCard from './ProfileSettingsCard'
 import ProfileSettingsAccordion from './ProfileSettingsAccordion';
 
 function ProfileSettingsTab(props) {
-  const { userMe, handleUpdateUser, handleToggleEmailNotifications, userEmailStatus, currentPassword, newPassword, handlePasswordChange, handlePasswordApply, modalOpen, setModalOpen } = props
+  const { userMe, handleUpdateUser, handleToggleEmailNotifications, userEmailStatus, oldPassword, setOldPassword, newPassword, setNewPassword, handleChangePassword, modalOpen, setModalOpen } = props
 
   const panes = [
     {
@@ -12,21 +12,21 @@ function ProfileSettingsTab(props) {
       render: () => (
         <Tab.Pane >
           <Form>
-            <ProfileSettingsDeteilsForm
+            <ProfileSettingsCard
               userMe={userMe}
               userEmailStatus={userEmailStatus}
             />
-              <ProfileSettingsAccordion 
+            <ProfileSettingsAccordion 
               userMe={userMe} 
               modalOpen={modalOpen}
               setModalOpen={setModalOpen}
-              handleUpdateUser={handleUpdateUser}
-              currentPassword={currentPassword}
+              oldPassword={oldPassword}
+              setOldPassword={setOldPassword}
               newPassword={newPassword}
-              handlePasswordChange={handlePasswordChange}
-              handlePasswordApply={handlePasswordApply}
+              setNewPassword={setNewPassword}
+              handleUpdateUser={handleUpdateUser}
               handleToggleEmailNotifications={handleToggleEmailNotifications}
-              />
+            />
           </Form>
         </Tab.Pane>
       )

@@ -13,10 +13,9 @@ function ProfileSettingsPage() {
   
   const [userMe, setUserMe] = useState('')
   const [modalOpen, setModalOpen] = useState(false);
-  const [currentPassword, setCurrentPassword] = useState('');
+  const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [userEmailStatus, setUserEmailStatus] = useState({});
-
 
   useEffect(() => {
     async function fetchData() {
@@ -35,20 +34,6 @@ function ProfileSettingsPage() {
     fetchData();
   }, [user]);
   
-
-  const handlePasswordChange = (e, { name, value }) => {
-    if (name === 'currentPassword') {
-      setCurrentPassword(value);
-    } else if (name === 'newPassword') {
-      setNewPassword(value);
-    }
-  };
-
-  const handlePasswordApply = () => {
-    setModalOpen(false);
-    setCurrentPassword('');
-    setNewPassword('');
-  };
 
   const handleUpdateUser = async (username) => {
     try {
@@ -76,12 +61,12 @@ function ProfileSettingsPage() {
     <Container>
       <ProfileSettingsTab
         userMe={userMe}
-        handlePasswordChange={handlePasswordChange}
-        handlePasswordApply={handlePasswordApply}
-        currentPassword={currentPassword}
-        newPassword={newPassword}
         modalOpen={modalOpen}
         setModalOpen={setModalOpen}
+        oldPassword={oldPassword}
+        setOldPassword={setOldPassword}
+        newPassword={newPassword}
+        setNewPassword={setNewPassword}
         handleUpdateUser={handleUpdateUser}
         userEmailStatus={userEmailStatus}
         handleToggleEmailNotifications={handleToggleEmailNotifications}
