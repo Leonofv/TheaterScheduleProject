@@ -52,9 +52,19 @@
    - Пользовательский интерфейс на React с использованием Semantic Ui.
 
 ## Зависимости
-Java 17+
-npm
-Docker
+
+### schedule-api:
+
+- Java 17.
+- Spring Boot.
+- PostgreSQL.
+- Docker.
+
+### schedule-ui:
+
+- Node.js.
+- React.
+- npm.
 
 ## Установка и запуск
 
@@ -67,17 +77,6 @@ Docker
 5. Из терминала перейти в папку 'schedule-ui',ввести последовательно команды: 'npm install', 'npm start'.
 6. После выполнения этих шагов приложение будет доступно по адресу: 'http://localhost:3000' UI, 'http://localhost:8080' API.
 
-### schedule-api:
-
-- Java 17.
-- Spring Boot.
-- БД PostgreSQL.
-
-### schedule-ui:
-
-- Node.js
-- React
-- npm 
 
 ## Авторы
 
